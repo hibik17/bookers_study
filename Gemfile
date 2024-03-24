@@ -44,6 +44,9 @@ group :development do
   gem 'spring'
 
   gem 'letter_opener'
+  gem 'htmlbeautifier'
+  gem 'pry-rails'
+  gem 'pry-byebug'
 end
 
 group :test do
