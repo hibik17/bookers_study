@@ -60,7 +60,7 @@ class BooksController < ApplicationController
 
   def search
     @keyword = params[:keyword]
-    @books = Book.where('title LIKE ?', "%#{@keyword}%")
+    @books = Book.where('title LIKE ? OR body LIKE ?', "%#{@keyword}%", "%#{@keyword}%")
 
     @book = Book.new
     @user = current_user
