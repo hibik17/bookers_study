@@ -57,6 +57,15 @@ class BooksController < ApplicationController
     @book.destroy
     redirect_to '/books'
   end
+
+  def search
+    @keyword = params[:keyword]
+    @books = Book.where('title LIKE ?', "%#{@keyword}%")
+
+    @book = Book.new
+    @user = current_user
+    render :index
+  end
   
   private
   
